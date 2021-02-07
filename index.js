@@ -2,7 +2,8 @@
 import { createStore } from "redux";
 
 const initialState = {
-  comments: []
+  comments: [],
+  reviews: []
 };
 
 const ADD_COMMENTS = "ADD_COMMENTS";
