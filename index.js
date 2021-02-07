@@ -1,5 +1,6 @@
 //state, actions, reducer, store, dispatch, subscribe, middlewares,
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import { createLogger } from "redux-logger";
 
 const initialState = {
   comments: [],
@@ -26,7 +27,8 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(reducer);
+const logger = createLogger();
+const store = createStore(reducer, applyMiddleware(logger));
 
 store.subscribe(() => {
   console.log(JSON.stringify(store.getState()));
