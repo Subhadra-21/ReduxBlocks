@@ -46,7 +46,7 @@ const reducer = (state = initialStateusers, action) => {
   }
 };
 
-const store = createStore(reducer, applyMiddleware(ThunkRedux));
+const store1 = createStore(reducer, applyMiddleware(ThunkRedux));
 
 const asyncActionCreator = () => {
   return dispatch => {
@@ -62,8 +62,8 @@ const asyncActionCreator = () => {
   };
 };
 
-store.subscribe(() => {
-  console.log(store.getState());
+store1.subscribe(() => {
+  console.log(store1.getState());
 });
 
-store.dispatch(asyncActionCreator());
+store1.dispatch(asyncActionCreator());

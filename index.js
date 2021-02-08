@@ -87,7 +87,6 @@ store.subscribe(() => {
   console.log(JSON.stringify(store.getState()));
 });
 
-/*
 store.dispatch(addComments("First comments!!"));
 store.dispatch(addComments("Second comments!!"));
 store.dispatch(addComments("third comments!!"));
@@ -113,4 +112,3 @@ const newActionCreatorMulti = bindActionCreators(
 );
 //directly call the action creator.
 newActionCreatorMulti.addComments("First comments!!");
-*/
