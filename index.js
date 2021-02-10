@@ -83,7 +83,7 @@ const reducerRoot = combineReducers({
 });
 const store = createStore(reducerRoot, applyMiddleware(logger));
 
-store.subscribe(() => {
+const unsubscribe = store.subscribe(() => {
   console.log(JSON.stringify(store.getState()));
 });
 
@@ -112,3 +112,8 @@ const newActionCreatorMulti = bindActionCreators(
 );
 //directly call the action creator.
 newActionCreatorMulti.addComments("First comments!!");
+
+unsubscribe(); // state update happens, but we wont be notified after unscribe.
+
+store.dispatch(addReviews("Third Review"));
+console.log("after unsubscribe - ", store.getState());
